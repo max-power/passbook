@@ -3,6 +3,7 @@ require "passbook/version"
 require "passbook/pk_pass"
 
 module Passbook
+
   class << self
 
     attr_reader :certificate
@@ -13,12 +14,7 @@ module Passbook
     end
     
     def certificate=(path)
-      Pathname(path).realpath
-    end
-    
-    def configure
-      yield self
-      self
+      @certificate = Pathname(path).realpath
     end
 
   end
