@@ -5,7 +5,7 @@ module Passbook
   class Manifest
 
     def initialize(*files)
-      @files = Array(files).flatten.compact
+      @files = files.flatten.compact
     end
     
     def filename
