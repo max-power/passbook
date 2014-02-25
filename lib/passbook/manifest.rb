@@ -13,17 +13,13 @@ module Passbook
     end
     
     def content
-      to_h.to_json
+      dictionary.to_json
     end
     
-    def to_h
+    def dictionary
       @files.each_with_object({}) do |file, dict|
-        dict[file.filename] = sign(file.content)
+        dict[file.filename] = Digest::SHA1.hexdigest(file.content)
       end
-    end
-    
-    def sign(content)
-      Digest::SHA1.hexdigest(content)
     end
 
   end
