@@ -45,6 +45,8 @@ Pass specifications is a hash that should match the [Apple Passbook Format Refer
     }
     
 The assets parameter is a hash with filenames as keys and local or remote paths to the file as value.
+See the [Apple Pass Design and Creation guidelines](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/PassKit_PG/Chapters/Creating.html#//apple_ref/doc/uid/TP40012195-CH4-SW45) 
+to see which files are used for the different pass types.
 
     pass_assets = {
       "background.png"    => "assets/background.png",
