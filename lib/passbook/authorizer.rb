@@ -21,11 +21,11 @@ module Passbook
     end
     
     def p12
-      OpenSSL::PKCS12.new(Passbook.certificate.read, Passbook.password)
+      OpenSSL::PKCS12.new(Passbook.certificate, Passbook.password)
     end
     
     def wwdr
-      OpenSSL::X509::Certificate.new(Passbook.wwdr_certificate.read)
+      OpenSSL::X509::Certificate.new(Passbook.wwdr_certificate)
     end
     
     def flags
