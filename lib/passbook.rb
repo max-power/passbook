@@ -1,4 +1,3 @@
-require "pathname"
 require "passbook/version"
 require "passbook/pk_pass"
 
