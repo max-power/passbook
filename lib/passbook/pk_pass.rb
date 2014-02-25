@@ -28,8 +28,7 @@ module Passbook
     end
     
     def to_file(path)
-#      Pathname(path).realpath.binwrite(to_s)
-      File.open(path, "wb") { |f| f.write to_s }
+      File.write(path, to_s)
     end
  
   end
