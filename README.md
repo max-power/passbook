@@ -1,6 +1,6 @@
 # Passbook
 
-This is inspired by https://github.com/paperlesspost/passifier which i couldn't get to run with p12 signing.
+This is inspired by [Passifier](https://github.com/paperlesspost/passifier) which i couldn't get to run with p12 signing.
 So here is my take on iOS Passbook passes.
 
 ## Installation
@@ -29,7 +29,7 @@ It is useful to store default informations like passTypeIdentifier or teamIdenti
 
     Passbook::PKPass.new(pass_specifications, pass_assets, {teamIdentifier: 'YXYXYX123', serialNumber: 1234.next })
 
-Pass specifications is a hash that should match the [Apple Passbook Format Reference](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html)
+Pass specifications is a hash that should match the [Apple Passbook Format Reference](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html).
 
     pass_specifications = {
       "formatVersion"      => 1,
