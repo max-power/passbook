@@ -22,8 +22,11 @@ First setup Signing:
 
 The basic usage is:
   
-    Passbook::PKPass.new(pass_specifications, pass_assets)
-    
+    pass = Passbook::PKPass.new(pass_specifications, pass_assets)
+    pass.to_file("my/path/to/the/pass.pkpass")
+    pass.to_s
+    pass.content_type  # "application/vnd.apple.pkpass"
+
 It can also accept a third argument, which will get merged with the pass_specifications.
 It is useful to store default informations like passTypeIdentifier or teamIdentifier.
 
@@ -59,11 +62,6 @@ to see which files are used for the different pass types.
       "thumbnail@2x.png"  => "assets/thumbnail@2x.png"
     }
 
-    pass = Passbook::PKPass.new(pass_specifications, pass_assets)
-    
-    pass.content_type # "application/vnd.apple.pkpass"
-    pass.to_file("my/path/to/the/pass.pkpass")
-    pass.to_s
 
 ## Contributing
 
