@@ -11,7 +11,7 @@ module Passbook
     def initialize(specs, assets, defaults = {})
       @pass      = Pass.new(specs, defaults)
       @assets    = Assets.new(assets)
-      @manifest  = Manifest.new(@pass, @files)
+      @manifest  = Manifest.new(@pass, @assets)
       @signature = Signature.new(@manifest)
     end
     
