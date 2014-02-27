@@ -7,7 +7,6 @@ require "passbook/archive"
 
 module Passbook
   class PKPass
-
     def initialize(specs, assets, defaults = {})
       @pass      = Pass.new(specs, defaults)
       @assets    = Assets.new(assets)
@@ -30,6 +29,5 @@ module Passbook
     def to_file(path)
       File.write(path, to_s)
     end
- 
   end
 end

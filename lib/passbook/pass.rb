@@ -2,7 +2,6 @@ require "json"
 
 module Passbook
   class Pass
-
     def initialize(specs, defaults = {})
       @specs = specs.merge(defaults)
     end
@@ -14,6 +13,5 @@ module Passbook
     def content
       @specs.to_json
     end
-
   end
 end

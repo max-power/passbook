@@ -2,7 +2,6 @@ require "zip"
 
 module Passbook
   module Archive
-    
     module_function
     
     def zip(*files)
@@ -12,6 +11,5 @@ module Passbook
         end
       end
     end
-    
   end
 end

@@ -3,7 +3,6 @@ require "json"
 
 module Passbook
   class Manifest
-
     def initialize(*files)
       @files = files.flatten.compact
     end
@@ -21,6 +20,5 @@ module Passbook
         dict[file.filename] = Digest::SHA1.hexdigest(file.content)
       end
     end
-
   end
 end

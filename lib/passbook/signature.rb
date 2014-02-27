@@ -2,7 +2,6 @@ require "passbook/authorizer"
 
 module Passbook
   class Signature
-
     def initialize(manifest)
       @manifest = manifest
     end
@@ -14,6 +13,5 @@ module Passbook
     def content
       Authorizer.sign(@manifest.content)
     end
-
   end
 end
