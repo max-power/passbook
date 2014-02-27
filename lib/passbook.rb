@@ -3,7 +3,6 @@ require "passbook/pk_pass"
 
 module Passbook
   class << self
-
     attr_accessor :certificate, :password
     
     def wwdr_certificate
@@ -35,6 +34,5 @@ module Passbook
       -----END CERTIFICATE-----
       EOF
     end
-
   end
 end
