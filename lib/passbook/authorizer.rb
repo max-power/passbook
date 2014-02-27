@@ -6,32 +6,17 @@ module Passbook
     module_function
     
     def sign(content)
-      Base64.decode64 extract(p7_smime(p7_sign(content)))
+      wwdr = OpenSSL::X509::Certificate.new(Passbook.wwdr_certificate)
+      pk12 = OpenSSL::PKCS12.new(Passbook.certificate, Passbook.password)
+      flag = OpenSSL::PKCS7::BINARY | OpenSSL::PKCS7::DETACHED
+      sign = OpenSSL::PKCS7.sign(pk12.certificate, pk12.key, content, [wwdr], flag)
+      data = OpenSSL::PKCS7.write_smime(sign)
+      Base64.decode64 extract_smime(data)
     end
     
-    def extract(data)
+    def extract_smime(data)
       start, finish = %[filename="smime.p7s"\n\n], %[\n\n------]
       data[(data.index(start) + start.length)...(data.rindex(finish) + finish.length)]
-    end
-    
-    def p7_smime(data)
-      OpenSSL::PKCS7.write_smime data
-    end
-    
-    def p7_sign(content)
-      OpenSSL::PKCS7.sign(p12.certificate, p12.key, content, [wwdr], flag)
-    end
-    
-    def p12
-      OpenSSL::PKCS12.new(Passbook.certificate, Passbook.password)
-    end
-    
-    def wwdr
-      OpenSSL::X509::Certificate.new(Passbook.wwdr_certificate)
-    end
-    
-    def flag
-      OpenSSL::PKCS7::BINARY | OpenSSL::PKCS7::DETACHED
     end
   end
 end
