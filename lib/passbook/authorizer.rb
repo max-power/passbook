@@ -15,7 +15,7 @@ module Passbook
     end
     
     def p7_smime(data)
-       OpenSSL::PKCS7.write_smime data
+      OpenSSL::PKCS7.write_smime data
     end
     
     def p7_sign(content)
