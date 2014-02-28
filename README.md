@@ -27,11 +27,6 @@ The basic usage is:
     pass.to_s
     pass.content_type  # "application/vnd.apple.pkpass"
 
-It can also accept a third argument, which will get merged with the pass_specifications.
-It is useful to store default informations like passTypeIdentifier or teamIdentifier.
-
-    Passbook::PKPass.new(pass_specifications, pass_assets, {teamIdentifier: 'YXYXYX123', serialNumber: 1234.next })
-
 Pass specifications is a hash that should match the [Apple Passbook Format Reference](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html).
 
     pass_specifications = {
