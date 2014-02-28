@@ -2,12 +2,10 @@ require 'net/http'
 
 module Passbook
   class RemoteFile
+    attr_reader :filename
+
     def initialize(name, uri)
-      @name, @uri = name, URI(uri)
-    end
-    
-    def filename
-      @name
+      @filename, @uri = name, URI(uri)
     end
     
     def content

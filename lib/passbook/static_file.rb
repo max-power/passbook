@@ -2,12 +2,10 @@ require 'pathname'
 
 module Passbook
   class StaticFile
-    def initialize(name, path)
-      @name, @path = name, Pathname(path)
-    end
+    attr_reader :filename
     
-    def filename
-      @name
+    def initialize(name, path)
+      @filename, @path = name, Pathname(path)
     end
     
     def content
