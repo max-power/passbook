@@ -4,13 +4,9 @@ require "passbook/remote_file"
 module Passbook
   class Assets < Array
     def initialize(dict)
-      super dict.map { |name, path| member_class(path).new(name, path) }
-    end
-    
-    private
-
-    def member_class(path)
-      path.to_s.match(%r[^https?://\S+]) ? RemoteFile : StaticFile
+      super dict.map do |name, path| 
+        (path =~ %r[^https?://\S+] ? RemoteFile : StaticFile).new(name, path)
+      end
     end
   end
 end
