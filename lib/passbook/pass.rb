@@ -2,8 +2,8 @@ require "json"
 
 module Passbook
   class Pass
-    def initialize(specs, defaults = {})
-      @specs = specs.merge(defaults)
+    def initialize(specs)
+      @specs = specs
     end
     
     def filename

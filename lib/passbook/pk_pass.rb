@@ -1,4 +1,3 @@
-require "pathname"
 require "passbook/pass"
 require "passbook/assets"
 require "passbook/manifest"
@@ -7,8 +6,8 @@ require "passbook/archive"
 
 module Passbook
   class PKPass
-    def initialize(specs, assets, defaults = {})
-      @pass      = Pass.new(specs, defaults)
+    def initialize(specs, assets)
+      @pass      = Pass.new(specs)
       @assets    = Assets.new(assets)
       @manifest  = Manifest.new(@pass, @assets)
       @signature = Signature.new(@manifest)
