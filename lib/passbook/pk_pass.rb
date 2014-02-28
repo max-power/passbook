@@ -18,12 +18,8 @@ module Passbook
       "application/vnd.apple.pkpass"
     end
     
-    def content
-      Archive.zip(@pass, @assets, @manifest, @signature)
-    end
-
     def to_s
-      content.string
+      Archive.zip(@pass, @assets, @manifest, @signature).string
     end
     
     def to_file(path)
