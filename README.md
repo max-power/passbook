@@ -1,7 +1,6 @@
 # Passbook
 
-This is inspired by [Passifier](https://github.com/paperlesspost/passifier) which i couldn't get to run with p12 signing.
-So here is my take on iOS Passbook passes.
+This is inspired by [Passifier](https://github.com/paperlesspost/passifier) which i couldn't get to run with p12 signing. So here is my take on iOS Passbook passes. It's used here: https://chefcards.herokuapp.com
 
 ## Installation
 
