@@ -11,7 +11,7 @@ module Passbook
     end
     
     def content
-      @specs.to_json
+      @content ||= @specs.to_json
     end
   end
 end

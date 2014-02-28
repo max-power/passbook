@@ -12,7 +12,7 @@ module Passbook
     end
     
     def content
-      dictionary.to_json
+      @content ||= dictionary.to_json
     end
     
     def dictionary

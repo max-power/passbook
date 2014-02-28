@@ -9,7 +9,7 @@ module Passbook
     end
     
     def content
-      @authority.sign(@manifest.content)
+      @content ||= @authority.sign(@manifest.content)
     end
   end
 end
