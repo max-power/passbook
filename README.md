@@ -17,12 +17,11 @@ And then execute:
 
 First setup Signing:
 
-    Passbook.certificate = File.read("/path/to/certificate.p12")
-    Passbook.password    = "my-password-for-the-certificate"
+    signer = Passbook::Authority.new(File.read("/path/to/certificate.p12"), "secret-password")
 
 The basic usage is:
   
-    pass = Passbook::PKPass.new(pass_specifications, pass_assets)
+    pass = Passbook::PKPass.new(pass_specifications, pass_assets, signer)
     pass.to_file("my/path/to/the/pass.pkpass")
     pass.to_s
     pass.content_type  # "application/vnd.apple.pkpass"

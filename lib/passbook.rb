@@ -1,9 +1,18 @@
 require "passbook/version"
 require "passbook/pk_pass"
+require "openssl"
 
 module Passbook
-  class << self
-    attr_accessor :certificate, :password
+  class Authority
+    def initialize(certificate, password)
+      @pk12 = OpenSSL::PKCS12.new(certificate, password)
+      @flag = OpenSSL::PKCS7::BINARY | OpenSSL::PKCS7::DETACHED
+      @wwdr = OpenSSL::X509::Certificate.new(wwdr_certificate)
+    end
+  
+    def sign(content)
+      OpenSSL::PKCS7.sign(@pk12.certificate, @pk12.key, content, [@wwdr], @flag).to_der
+    end
     
     def wwdr_certificate
       <<-EOF.gsub /^\s+/, ""

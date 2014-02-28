@@ -6,11 +6,11 @@ require "passbook/archive"
 
 module Passbook
   class PKPass
-    def initialize(specs, assets)
+    def initialize(specs, assets, authority)
       @pass      = Pass.new(specs)
       @assets    = Assets.new(assets)
       @manifest  = Manifest.new(@pass, @assets)
-      @signature = Signature.new(@manifest)
+      @signature = Signature.new(@manifest, authority)
     end
     
     def content_type
