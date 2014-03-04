@@ -55,6 +55,9 @@ to see which files are used for the different pass types.
       "thumbnail@2x.png"  => "assets/thumbnail@2x.png"
     }
 
+## See Also
+
+There is also a very tiny version available here: https://gist.github.com/max-power/9262053
 
 ## Contributing
 
