@@ -57,7 +57,7 @@ to see which files are used for the different pass types.
 
 ## See Also
 
-There is also a very tiny version available here: https://gist.github.com/max-power/9262053
+There is also a very tiny (60 LOC) version available here: https://gist.github.com/max-power/9262053
 
 ## Contributing
 
