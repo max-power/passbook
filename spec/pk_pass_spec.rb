@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Passbook::PKPass do
   before do
-    @pass = Passbook::PKPass.new({},{})
+    @pass = Passbook::PKPass.new({},{},{})
   end
   
   it "should have the 'vnd.apple.pkpass' content_type" do

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Passbook::Signature do
   before do
-    @sig = Passbook::Signature.new({})
+    @sig = Passbook::Signature.new({}, {})
   end
   
   it "should have a filename" do

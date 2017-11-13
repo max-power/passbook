@@ -10,38 +10,6 @@ describe Passbook::RemoteFile do
   end
   
   it "should have content" do
-    @file.content.must_equal 'User-Agent: *
-Disallow: /music?
-Disallow: /widgets/radio?
-
-Disallow: /affiliate/
-Disallow: /affiliate_redirect.php
-Disallow: /affiliate_sendto.php
-Disallow: /affiliatelink.php
-Disallow: /campaignlink.php
-Disallow: /delivery.php
-
-Disallow: /music/+noredirect/
-Disallow: /user/*/library/music/
-Disallow: /*/+news/*/visit
-Disallow: /*/+wiki/diff
-
-# AJAX content
-Disallow: /search/autocomplete
-Disallow: /template
-Disallow: /ajax
-Disallow: /user/*/tasteomatic
-
-# Ads metastructure
-Disallow: /8264
-
-Disallow: /harming/humans
-Disallow: /ignoring/human/orders
-Disallow: /harm/to/self
-
-Allow: /
-
-Sitemap: http://www.last.fm/sitemap-index.xml
-'
+    @file.content.wont_be_nil
   end
 end
